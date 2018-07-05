@@ -6,10 +6,11 @@ import { Veicolo } from '../veicolo';
   styleUrls: ['./veicolo.component.css']
 })
 export class VeicoloComponent  implements OnInit {
+
   // bind output with an event that send an object type veicle at the component ceicle-list
   @Output() rimuoviMezzo = new EventEmitter <Veicolo>();
-  // bind input data to receive data from the component veicle-list
 
+  // bind input data to receive data from the component veicle-list
   @Input() mezzi: Veicolo;
   constructor() { }
 

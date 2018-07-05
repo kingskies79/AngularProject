@@ -36,3 +36,8 @@ typeVeicleAllowed []
     engine: string
     doors: string
 
+# Directive from manage the img and style
+    CcMotoHoverDirective
+    CcFurgoneHoverDirective
+    CcAutoHoverDirective
+

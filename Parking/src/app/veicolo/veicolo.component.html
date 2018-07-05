@@ -1,19 +1,22 @@
 <div class="card">
   <div class="card-block">
-      <h4 class="card card-title">
-          {{mezzi.tipo}}
-      </h4>
+    <h4 class="card card-title">
+      {{mezzi.tipo}}
+    </h4>
     <p appCcAutoHover *ngIf="mezzi.tipo === 'Auto'  " class="text-primary ">Numero porte {{mezzi.porte}}, Alimentazione {{mezzi.alimentazione}}
-      <img class="card-img" src=""/>
+      <img class="card-img" src="" />
 
       <a class="btn btn-warning" (click)="rimuoviVeicolo(mezzi.id)">X</a>
     </p>
 
-    <p *ngIf="mezzi.tipo === 'Moto'" class="text-danger">Motore tipo {{mezzi.tempi}} tempi
+    <p appCcMotoHover *ngIf="mezzi.tipo === 'Moto'" class="text-danger">Motore tipo {{mezzi.tempi}} tempi
+
+      <img class="card-img" src="" />
       <a class="btn btn-warning" (click)="rimuoviVeicolo(mezzi.id)">X</a>
     </p>
 
-    <p *ngIf="mezzi.tipo === 'Furgone'" class="text-success">Volume {{mezzi.capacita}} metri cubici
+    <p appCcFurgoneHover *ngIf="mezzi.tipo === 'Furgone'" class="text-success">Volume {{mezzi.capacita}} metri cubici
+      <img class="card-img" src="" />
       <a class="btn btn-warning" (click)="rimuoviVeicolo(mezzi.id)">X</a>
     </p>
   </div>

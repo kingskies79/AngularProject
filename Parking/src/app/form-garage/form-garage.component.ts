@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Garage } from '../garage';
 import { Veicolo } from '../veicolo';
 import { Moto } from '../moto';
 import { Auto } from '../auto';
@@ -10,8 +9,6 @@ import { Furgone} from '../furgone';
   styleUrls: ['./form-garage.component.css']
 })
 export class FormGarageComponent  implements OnInit {
-
-  // bind output with an event that send an object type veicle at the component veicle-list
   @Output() InserisciMezzo = new EventEmitter <Veicolo>();
   selectedValue = null;
   tipoVeicolo: string;
@@ -24,7 +21,7 @@ export class FormGarageComponent  implements OnInit {
   isActiveMoto = false;
   isActiveFurgone = false;
 
-  // type veicle allowed
+
   TipoVeicoloAmmesso = [{ name: 'Auto' }, { name: 'Moto' }, { name: 'Furgone' }];
   constructor() {
     this.id = -1;
@@ -33,9 +30,9 @@ export class FormGarageComponent  implements OnInit {
 
   ngOnInit() {
   }
-   // check the type of veicle enter into the parking
-  dropList(tipoVeicolo: string) {
 
+  dropList(tipoVeicolo: string) {
+    console.log(tipoVeicolo);
     switch (this.tipoVeicolo) {
 
       case 'Auto': {
@@ -58,20 +55,33 @@ export class FormGarageComponent  implements OnInit {
       }
     }
   }
-  // add motorbike into the parking
   inserisciMoto() {
     this.id += 1;
-    this.InserisciMezzo.emit(new Moto(this.tipoMotore, this.id));
-  }
-  // add car into the parking
-  inserisciAuto(porte: string, alimentazione: string) {
-    this.id += 1;
-    this.InserisciMezzo.emit(new Auto(this.tipoPorte, this.tipoAlimentazione, this.id));
-  }
-  // add truck into the parking
-  inserisciFurgone() {
-    this.id += 1;
-    this.InserisciMezzo.emit(new Furgone(this.tipoVolume, this.id));
+     console.log('inserisciMoto');
+      this.InserisciMezzo.emit(new Moto(this.tipoMotore, this.id));
+
+
+
   }
 
+  inserisciAuto(porte: string, alimentazione: string) {
+    console.log('inserisciAuto');
+    this.id += 1;
+      this.InserisciMezzo.emit(new Auto(this.tipoPorte, this.tipoAlimentazione, this.id));
+
+
+  }
+  inserisciFurgone() {
+
+    console.log('inserisciFurgone');
+    this.id += 1;
+      this.InserisciMezzo.emit(new Furgone(this.tipoVolume, this.id));
+
+
+  }
+
+
+  eliminaVeicolo() {
+
+  }
 }

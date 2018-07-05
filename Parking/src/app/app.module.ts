@@ -7,6 +7,8 @@ import { FormGarageComponent } from './form-garage/form-garage.component';
 import { VeicoloListComponent } from './veicolo-list/veicolo-list.component';
 import { VeicoloComponent } from './veicolo/veicolo.component';
 import { CcAutoHoverDirective } from './cc-auto-hover.directive';
+import { CcMotoHoverDirective } from './cc-moto-hover.directive';
+import { CcFurgoneHoverDirective } from './cc-furgone-hover.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { CcAutoHoverDirective } from './cc-auto-hover.directive';
     FormGarageComponent,
     VeicoloListComponent,
     VeicoloComponent,
-    CcAutoHoverDirective
+    CcAutoHoverDirective,
+    CcMotoHoverDirective,
+    CcFurgoneHoverDirective
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,7 @@ export class VeicoloListComponent implements OnInit {
 
   addMezzo(mezzo) {
     // Show log about veicle into the parking
-    console.log(mezzo);
+    console.log('mezzo add' + mezzo);
     // verify places avaiable
     if (this.disponibilita()) {
       // add veicle into parking
