@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-block">
+
+    <h4 class="card card-title"> Il nostro Garage </h4>
+    <h6 class="card-subtitle mb-2 text-muted">Benvenuti</h6>
+    <p class="card-text">Scegli un veicolo da parcheggiare dalla lista </p>
+    <select [(ngModel)]="tipoVeicolo" name="Select name" (change)="dropList(tipoVeicolo)">
+      <option *ngFor="let v of TipoVeicoloAmmesso" [attr.value]="v.name">{{v.name}}</option>
+    </select>`
+    <select [(ngModel)]="tipoPorte" *ngIf="isActiveAuto">
+      <option value="3 Porte">3 Porte</option>
+      <option value="5 Porte">5 Porte</option>
+    </select>
+    <select [(ngModel)]="tipoAlimentazione" *ngIf="isActiveAuto">
+      <option value="Benzina">Benzina</option>
+      <option value="Diesel">Diesel</option>
+    </select>
+    <select [(ngModel)]="tipoVolume" *ngIf="isActiveFurgone">
+      <option value="30">30 metri cubici</option>
+      <option value="50">50 metri cubici</option>
+    </select>
+    <select [(ngModel)]="tipoMotore" *ngIf="isActiveMoto">
+      <option value="2">2 Tempi </option>
+      <option value="4">4 Tempi</option>
+    </select>
+    <a *ngIf="isActiveMoto" class="btn btn-primary" (click)="inserisciMoto(tipoMotore)">Inserisci Moto </a>
+    <a *ngIf="isActiveAuto" class="btn btn-primary" (click)="inserisciAuto(tipoPorte,tipoAlimentazione)">Inserisci Auto </a>
+    <a *ngIf="isActiveFurgone" class="btn btn-primary" (click)="inserisciFurgone(tipoVolume)">Inserisci Furgone </a>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-block">
+      <h4 class="card card-title">
+          {{mezzi.tipo}}
+      </h4>
+    <p appCcAutoHover *ngIf="mezzi.tipo === 'Auto'  " class="text-primary ">Numero porte {{mezzi.porte}}, Alimentazione {{mezzi.alimentazione}}
+      <img class="card-img" src=""/>
+
+      <a class="btn btn-warning" (click)="rimuoviVeicolo(mezzi.id)">X</a>
+    </p>
+
+    <p *ngIf="mezzi.tipo === 'Moto'" class="text-danger">Motore tipo {{mezzi.tempi}} tempi
+      <a class="btn btn-warning" (click)="rimuoviVeicolo(mezzi.id)">X</a>
+    </p>
+
+    <p *ngIf="mezzi.tipo === 'Furgone'" class="text-success">Volume {{mezzi.capacita}} metri cubici
+      <a class="btn btn-warning" (click)="rimuoviVeicolo(mezzi.id)">X</a>
+    </p>
+  </div>
+</div>
